@@ -428,6 +428,23 @@ button:focus-visible {
 
 .doc-section p { max-width: 72ch; }
 
+.doc-section h3 {
+  margin-top: 1.4rem;
+  font-size: 1rem;
+  color: var(--amber-dark);
+}
+
+.doc-section ul {
+  margin: 0.6rem 0 0;
+  padding-left: 1.2rem;
+  max-width: 72ch;
+}
+
+.doc-section li {
+  margin-bottom: 0.45rem;
+  font-size: 0.96rem;
+}
+
 .doc-placeholder {
   color: var(--ink-soft);
   font-style: italic;

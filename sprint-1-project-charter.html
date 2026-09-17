@@ -30,7 +30,7 @@
     <p class="breadcrumb"><a href="sprint-1.html">Sprint 1</a> / Project Charter</p>
     <div class="doc-header">
       <h1>Project Charter</h1>
-      <a class="btn btn-primary" href="downloads/sprint-1-project-charter.pdf">Download PDF</a>
+      <a class="btn btn-primary" href="downloads/ProjectCharter.pdf">Download PDF</a>
     </div>
   </div>
 </header>
@@ -39,13 +39,99 @@
   <div class="wrap">
 
     <div class="doc-section">
+      <h2>Business objective</h2>
+      <p>The objective of this project is to develop an application that helps vehicle owners better manage and understand the maintenance of their vehicles. Market research interviews identified recurring problems: forgetting or delaying routine maintenance, difficulty knowing when maintenance should be performed, disorganized records of previous repairs, and difficulty tracking how much money has been spent maintaining a vehicle. The app gives users a centralized place to track vehicle maintenance, receive reminders for upcoming services, record maintenance and repair expenses, and access information about vehicle parts and maintenance needs specific to their vehicle.</p>
+    </div>
+
+    <div class="doc-section">
       <h2>Scope boundary</h2>
-      <p class="doc-placeholder">[What's in scope for this project, and just as important, what's explicitly out of scope.]</p>
+
+      <h3>In scope</h3>
+      <ul>
+        <li>User account creation and login</li>
+        <li>Ability to add and manage one or more vehicles</li>
+        <li>Storage of basic vehicle information: make, model, year, mileage</li>
+        <li>Recommended maintenance based on vehicle information and mileage</li>
+        <li>Tracking miles traveled using the mobile device's location</li>
+        <li>Maintenance reminders for routine services (oil changes, tire rotations, brakes, etc.)</li>
+        <li>Maintenance and repair history for each vehicle</li>
+        <li>Recording maintenance expenses — service performed, date, mileage, and cost</li>
+        <li>A summary of maintenance costs for each vehicle</li>
+        <li>Information to help users identify commonly needed vehicle parts and maintenance services</li>
+        <li>An AI-based assistant that can answer basic questions about vehicle maintenance and parts</li>
+      </ul>
+
+      <h3>Out of scope</h3>
+      <ul>
+        <li>Direct vehicle diagnostics through the vehicle's onboard computer</li>
+        <li>Automatic repair or maintenance of vehicles</li>
+        <li>Purchasing or selling vehicles</li>
+        <li>Direct purchasing of vehicle parts through the application</li>
+        <li>Guaranteeing that AI-generated maintenance or repair recommendations are equal to a professional mechanic's diagnosis</li>
+      </ul>
+
+      <h3>Deferred</h3>
+      <ul>
+        <li>Scheduling or processing payments with repair shops</li>
+        <li>Shared vehicle access among users</li>
+        <li>Resale / trade-in estimate for the vehicle</li>
+      </ul>
+    </div>
+
+    <div class="doc-section">
+      <h2>Constraints</h2>
+      <ul>
+        <li>The project must be completed within the timeframe established for the course</li>
+        <li>Development is limited by the size, experience, and availability of the student development team</li>
+        <li>Vehicle maintenance information may vary by make, model, year, mileage, driving conditions, and manufacturer recommendations</li>
+        <li>Access to detailed vehicle and parts databases may be limited</li>
+        <li>AI-generated responses must be limited to informational assistance and should not be presented as guaranteed mechanical diagnoses</li>
+      </ul>
     </div>
 
     <div class="doc-section">
       <h2>Assumptions</h2>
-      <p class="doc-placeholder">[The assumptions the team is building on — about users, technology, timeline, or resources — that, if wrong, would change the plan.]</p>
+      <ul>
+        <li>Users will provide accurate vehicle information, including make, model, year, and current mileage</li>
+        <li>Users will manually record completed maintenance and repair information when necessary</li>
+        <li>Users will allow their location to be shared with the application</li>
+        <li>Maintenance information will be available for the vehicle types supported by the application</li>
+        <li>Users will have access to an internet-connected computer or mobile device</li>
+        <li>Most users will benefit from having maintenance schedules, history, expenses, and vehicle information organized in one location</li>
+        <li>The application will initially focus on common passenger vehicles rather than specialized, commercial, or heavy-duty vehicles</li>
+      </ul>
+    </div>
+
+    <div class="doc-section">
+      <h2>Success criteria</h2>
+      <ul>
+        <li>Users can successfully create and manage their vehicles within the application</li>
+        <li>Users can view upcoming recommended maintenance for their vehicles</li>
+        <li>Users can record completed maintenance and repair services</li>
+        <li>Users can view the maintenance history of each vehicle</li>
+        <li>Users can record and review maintenance and repair expenses</li>
+        <li>The system successfully provides reminders for upcoming maintenance</li>
+        <li>Users can obtain useful basic maintenance and parts information through the application</li>
+        <li>The major features defined for the project's initial release are implemented and function correctly by the project deadline</li>
+        <li>User testing shows that users can understand and use the application's core features without significant difficulty</li>
+        <li>Final user feedback indicates the application provides a more organized way to manage vehicle maintenance than users' previous methods</li>
+      </ul>
+    </div>
+
+    <div class="doc-section">
+      <h2>PM authority</h2>
+      <ul>
+        <li>Assign and coordinate project tasks among team members</li>
+        <li>Establish and maintain the project schedule, milestones, and deadlines</li>
+        <li>Monitor project progress and identify schedule, scope, and resource issues</li>
+        <li>Organize team meetings and project status updates</li>
+        <li>Approve minor changes that do not significantly affect the project's scope</li>
+        <li>Escalate major scope changes, delays, or other significant issues to the project team and instructor for approval when necessary</li>
+        <li>Ensure project documentation and deliverables are completed and submitted on time</li>
+        <li>Facilitate the resolution of disagreements or project issues among team members</li>
+        <li>Coordinate communication between team members and other project stakeholders</li>
+      </ul>
+      <p>Major changes to the project's scope, objectives, or deliverables require agreement from the project team and, when applicable, approval from the instructor.</p>
     </div>
 
     <div class="doc-section">
@@ -53,30 +139,41 @@
       <table class="stakeholder-table">
         <thead>
           <tr>
-            <th>Name / group</th>
-            <th>Role</th>
-            <th>Interest</th>
-            <th>Influence</th>
+            <th>Name</th>
+            <th>Title</th>
+            <th>Role / responsibility</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>[Stakeholder]</td>
-            <td>[Role]</td>
-            <td>[Low / medium / high]</td>
-            <td>[Low / medium / high]</td>
+            <td>Dr. Mejia</td>
+            <td>Instructor</td>
+            <td>Approves scope changes, grades deliverables</td>
           </tr>
           <tr>
-            <td>[Stakeholder]</td>
-            <td>[Role]</td>
-            <td>[Low / medium / high]</td>
-            <td>[Low / medium / high]</td>
+            <td>Andres Romero</td>
+            <td>Project team member</td>
+            <td>Responsible for project deliverables</td>
           </tr>
           <tr>
-            <td>[Stakeholder]</td>
-            <td>[Role]</td>
-            <td>[Low / medium / high]</td>
-            <td>[Low / medium / high]</td>
+            <td>Randal Guzman</td>
+            <td>Project team member</td>
+            <td>Responsible for project deliverables</td>
+          </tr>
+          <tr>
+            <td>Esteban Navar</td>
+            <td>Project team member</td>
+            <td>Responsible for project deliverables</td>
+          </tr>
+          <tr>
+            <td>Carlos Adrian Yanez Duron</td>
+            <td>Project team member</td>
+            <td>Responsible for project deliverables</td>
+          </tr>
+          <tr>
+            <td>Vehicle owners</td>
+            <td>End user</td>
+            <td>Uses the application itself</td>
           </tr>
         </tbody>
       </table>
