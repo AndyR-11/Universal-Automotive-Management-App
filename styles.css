@@ -523,3 +523,61 @@ button:focus-visible {
   .sprint-meta { gap: 1.2rem; }
   .stakeholder-table { display: block; overflow-x: auto; }
 }
+
+/* ---------- project estimation tables ---------- */
+
+.estimation-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.2rem;
+  margin-bottom: 1.4rem;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  font-size: 0.92rem;
+}
+
+.estimation-table th,
+.estimation-table td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--line);
+  line-height: 1.5;
+}
+
+.estimation-table th {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.84rem;
+  background: #efeee9;
+  color: var(--ink);
+}
+
+.estimation-table tbody tr:nth-child(even) {
+  background: #fbfaf7;
+}
+
+.estimation-table tbody tr:hover {
+  background: #f5efe8;
+}
+
+.estimation-table td:first-child {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.estimation-table a {
+  color: var(--amber-dark);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+@media (max-width: 860px) {
+  .doc-section {
+    overflow-x: auto;
+  }
+
+  .estimation-table {
+    min-width: 760px;
+  }
+}
