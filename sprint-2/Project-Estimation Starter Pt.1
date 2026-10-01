@@ -1,1 +1,324 @@
+html = r'''<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Estimation Starter Pt.1 — Universal Automotive Management App</title>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="13" cy="13" r="11" stroke="#1e2226" stroke-width="1.6"/>
+        <path d="M13 6.5V13L17.3 15.3" stroke="#c97a2e" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+      Universal Automotive Management App
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about.html">About us</a></li>
+      <li><a href="../sprint-1/sprint-1.html">Sprint 1</a></li>
+      <li><a href="sprint-2.html" aria-current="page">Sprint 2</a></li>
+      <li><a href="../sprint-3/sprint-3.html">Sprint 3</a></li>
+      <li><a href="../sprint-4/sprint-4.html">Sprint 4</a></li>
+      <li><a href="../sprint-5/sprint-5.html">Sprint 5</a></li>
+      <li><a href="../sprint-6/sprint-6.html">Sprint 6</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="wrap">
+    <div class="breadcrumb">
+      <a href="sprint-2.html">Sprint 2</a>
+      <span>/</span>
+      <span>Project Estimation Starter Pt.1</span>
+    </div>
+
+    <div class="doc-header">
+      <div>
+        <h1>A First Look at Your Project's Size</h1>
+        <p class="lede">Project Estimation Starter Pt.1 for the Universal Automotive Management App.</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="doc-grid-section">
+  <div class="wrap">
+
+    <section class="doc-section">
+      <h2>Step 1 — Release 1 Capabilities</h2>
+
+      <p>
+        <strong>Hidden work key:</strong>
+        T = Testing,
+        S = Security or privacy,
+        I = Integration with other systems,
+        D = Data,
+        H = Hosting and deployment,
+        U = Usability and accessibility,
+        O = Documentation or training
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Capability (what, not how)</th>
+            <th>Evidence (charter or interview)</th>
+            <th>Hidden work</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>It stores basic vehicle information</td>
+            <td>Charter</td>
+            <td>T, S, D</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Gives recommended maintenance on the vehicle</td>
+            <td>Interview 1, Charter</td>
+            <td>T, D, U</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Keeps track of miles user travelled</td>
+            <td>Charter</td>
+            <td>T, S, I, D</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Gives maintenance reminders for routine services</td>
+            <td>Interview 6, Charter</td>
+            <td>T, D, U, O</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Keeps maintenance and repair history for each vehicle</td>
+            <td>Interview 8, Charter</td>
+            <td>T, D</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Allows user to record maintenance expenses, including service performed, date, mileage, and cost.</td>
+            <td>Interview 7, Charter</td>
+            <td>T, D, U</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Provides a summary of maintenance costs for each vehicle</td>
+            <td>Interview 11, Charter</td>
+            <td>T, D</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="doc-section">
+      <h2>Step 2 — Previous Team Experience</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Question</th>
+            <th>Answer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>What was it?</td>
+            <td>
+              Database Systems Project: a web app where you could manage and make appointments for any of your pets at the vet.
+              Could choose any vet and vets had access to all medical records for their patients.
+            </td>
+          </tr>
+          <tr>
+            <td>How long was it expected to take?</td>
+            <td>Was a semester long project but started it around halfway so about 8 weeks.</td>
+          </tr>
+          <tr>
+            <td>How long did it take?</td>
+            <td>Took the 8 weeks but some features took longer to implement than expected.</td>
+          </tr>
+          <tr>
+            <td>What took longer than expected?</td>
+            <td>
+              There were a few errors coming up here and there. Some things that were not working within the database
+              took a bit longer than expected.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="doc-section">
+      <h2>Step 3 — Similar Products</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Product A (small)</th>
+            <th>Product B (big)</th>
+            <th>Product C (your choice)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Product and company</td>
+            <td>AUTOsist, founded by Zorrane Abdeali.</td>
+            <td>myCARFAX, now CARFAX Car Care, developed by CARFAX.</td>
+            <td>Drivvo, originally CTN Car, a small independent Brazilian team</td>
+          </tr>
+
+          <tr>
+            <td>Why it is similar to your project</td>
+            <td>Tracks vehicle maintenance, service records, fuel, and expenses.</td>
+            <td>Provides service history, maintenance reminders, recall information, and vehicle information.</td>
+            <td>Tracks vehicle fuel, expenses, maintenance and service history</td>
+          </tr>
+
+          <tr>
+            <td>Development started</td>
+            <td>Abdeali came up with and started working on it in 2014</td>
+            <td>Around 2011</td>
+            <td>Unknown</td>
+          </tr>
+
+          <tr>
+            <td>First public release</td>
+            <td>2014/Early 2015, initially shared with friends and car enthusiasts.</td>
+            <td>August 22, 2012 on the App Store</td>
+            <td>Platform launched in 2012</td>
+          </tr>
+
+          <tr>
+            <td>Time to first release</td>
+            <td>Exact time unknown but it appears to be around a year.</td>
+            <td>Exact time also unknown but appears to be 1 year – 1 ½ years</td>
+            <td>Unknown</td>
+          </tr>
+
+          <tr>
+            <td>What the first release included</td>
+            <td>It was a consumer-focused app for storing and sharing vehicle maintenance information.</td>
+            <td>
+              Vehicle service-history tracking, automatic service alerts, safety-recall information,
+              and access through iPhone, Android, and the web.
+            </td>
+            <td>A simple management app the focused on tracking the vehicle info</td>
+          </tr>
+
+          <tr>
+            <td>Team size, if known</td>
+            <td>One person at launch, Abdeali</td>
+            <td>Unknown</td>
+            <td>Unknown, described only as a small independent team</td>
+          </tr>
+
+          <tr>
+            <td>What worked</td>
+            <td>
+              He addressed a real problem he faced, not having a place to view all his personal vehicle maintenance history.
+            </td>
+            <td>
+              They partnered with thousands of existing service shops, so history filled in automatically
+              instead of having to manually fill it out
+            </td>
+            <td>It was simple which allowed users to get the hang of it easily</td>
+          </tr>
+
+          <tr>
+            <td>What did not work</td>
+            <td>
+              Business users wanted to use the app for fleets which the app initially didn’t accommodate.
+              He listened and shifted it into a commercial fleet management tool in December 2016
+            </td>
+            <td>Unknown, none found in available sources</td>
+            <td>It was only limited to certain languages and currencies</td>
+          </tr>
+
+          <tr>
+            <td>Sources (links)</td>
+            <td>
+              Founder Interview
+              (<a href="https://www.ccjdigital.com/business/article/14934261/autosist-app-simplifies-maintenance-recordkeeping" target="_blank">link</a>)
+              <br><br>
+              Company Website:
+              (<a href="https://autosist.com/" target="_blank">link</a>)
+            </td>
+            <td>
+              Carfax CIO interview
+              (<a href="https://www.cio.com/article/291032/mobile-don-t-let-mobile-development-ruin-your-life.html" target="_blank">link</a>)
+              <br><br>
+              Carfax press release
+              (<a href="https://www.vehicleservicepros.com/shop-operations/service-repair/news/10965058/carfax-unveils-new-car-care-mobile-app" target="_blank">link</a>)
+            </td>
+            <td>
+              Drivvo Website
+              (<a href="https://www.drivvo.com/en/personal-use/" target="_blank">link</a>)
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="doc-section">
+      <h2>Step 4 — Compare</h2>
+
+      <h3>1. Hidden Work Comparison</h3>
+      <p>
+        T and D are the ones that appear most often in our work. Our similar products also dealt with the data
+        related challenges. AUSTOsist was created with the intention of making vehicle maintenance info organized
+        and CARFAX benefited from partnering with some service shops so that the vehicle history could automatically
+        be added instead of having to do that manually. This backs up our belief of the importance of properly
+        collecting and storing vehicle data in our project.
+      </p>
+
+      <h3>2. First Release Comparison</h3>
+      <p>
+        From what we saw AUTOsist took around a year to reach its first release with only 1 person while CARFAX
+        took somewhere around a year and a half but we do not know what the team size was just like Drivvo.
+        After researching these products, the lesson we took out of it was that we should focus on getting the
+        most important features correct instead of trying to get everything done at once. We believe our project
+        could take around 10-15 months to get it done!
+      </p>
+
+      <h3>3. Practice to Copy and Mistake to Avoid</h3>
+      <p>
+        For these similar products’ first releases, they stayed narrow with the functionality, they only did what
+        they needed to which is what we will copy. For the mistake we will avoid what Drivvo did and make sure
+        our app can be used by people internationally.
+      </p>
+
+      <h3>Comparable Estimate</h3>
+      <p>
+        Our comparables suggest a first release would take <strong>10 to 15 months</strong>
+        with a team of <strong>4</strong>.
+      </p>
+    </section>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    Universal Automotive Management App — built for a software project management class.
+  </div>
+</footer>
+
+</body>
+</html>
+'''
+
+with open("/mnt/data/sprint-2-project-estimation-starter-pt1.html", "w", encoding="utf-8") as f:
+    f.write(html)
+
+print("Updated without pathlib and without inline CSS.")
 
