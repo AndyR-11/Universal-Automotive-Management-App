@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>One Page Budget — Universal Automotive Management App</title>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="13" cy="13" r="11" stroke="#1e2226" stroke-width="1.6"/>
+        <path d="M13 6.5V13L17.3 15.3" stroke="#c97a2e" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+      Universal Automotive Management App
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about.html">About us</a></li>
+      <li><a href="../sprint-1/sprint-1.html">Sprint 1</a></li>
+      <li><a href="sprint-2.html" aria-current="page">Sprint 2</a></li>
+      <li><a href="../sprint-3/sprint-3.html">Sprint 3</a></li>
+      <li><a href="../sprint-4/sprint-4.html">Sprint 4</a></li>
+      <li><a href="../sprint-5/sprint-5.html">Sprint 5</a></li>
+      <li><a href="../sprint-6/sprint-6.html">Sprint 6</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="wrap">
+    <p class="breadcrumb"><a href="sprint-2.html">Sprint 2</a> / One Page Budget</p>
+    <div class="doc-header">
+      <h1>One Page Budget</h1>
+      <a class="btn btn-primary" href="../downloads/sprint-2-one-page-budget.pdf">Download PDF</a>
+    </div>
+    <p class="lede">Andres Romero, Randal Guzman, Esteban Navar, Carlos Adrian Yanez Duron</p>
+  </div>
+</header>
+
+<section class="doc-grid-section">
+  <div class="wrap">
+
+    <section class="doc-section">
+      <h2>Cost drivers</h2>
+      <table class="estimation-table">
+        <thead>
+          <tr><th>Cost driver</th><th>Owner</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Labor</td><td>Andres</td></tr>
+          <tr><td>App store fees</td><td>Randal</td></tr>
+          <tr><td>Third-party services</td><td>Esteban</td></tr>
+          <tr><td>Backend / hosting</td><td>Carlos</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="doc-section">
+      <h2>Hours to FTE-months</h2>
+      <p class="callout">4.34 FTE-months on average</p>
+      <table class="estimation-table">
+        <thead>
+          <tr><th>Method</th><th>Effort (hrs, low/mid/high)</th><th>FTE-months (low/mid/high)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Story points</td><td>371 / 464 / 619</td><td>2.85 / 3.57 / 4.76</td></tr>
+          <tr><td>Analogous (AUTOsist)</td><td>448 / 664 / 880</td><td>3.45 / 5.11 / 6.77</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="doc-section">
+      <h2>Team capacity</h2>
+      <table class="estimation-table">
+        <thead>
+          <tr><th>Input</th><th>Value</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Hours per person per sprint</td><td>80</td></tr>
+          <tr><td>Team size</td><td>4</td></tr>
+          <tr><td>Team hours per sprint</td><td>320</td></tr>
+          <tr><td>Sprints per month</td><td>2</td></tr>
+          <tr><td>Team hours per month</td><td>640</td></tr>
+          <tr><td>Team FTE-months supplied, per month</td><td>640 ÷ 130 = 4.92</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="doc-section">
+      <h2>Roles-by-month staffing</h2>
+      <table class="estimation-table">
+        <thead>
+          <tr><th>Role</th><th>Month 1 (FTE)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>PM / Backend — Andres Romero</td><td>1.23</td></tr>
+          <tr><td>Backend / API — Randal Guzman</td><td>1.23</td></tr>
+          <tr><td>Frontend / UI — Esteban Navar</td><td>1.23</td></tr>
+          <tr><td>QA / Docs — Carlos Adrian Yanez Duron</td><td>1.23</td></tr>
+          <tr><td><strong>Total</strong></td><td><strong>4.92</strong></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="doc-section">
+      <h2>Loaded labor rate</h2>
+      <ul>
+        <li>Base rate: $50/hr</li>
+        <li>Burden factor: ×1.4</li>
+        <li>Loaded rate = $50 × 1.4 = <strong>$70/hr</strong></li>
+      </ul>
+    </section>
+
+    <section class="doc-section">
+      <h2>Labor cost</h2>
+      <p>Labor cost = 4.34 FTE-months × 130 hrs × $70/hr = <strong>$39,494</strong></p>
+    </section>
+
+    <section class="doc-section">
+      <h2>Non-labor checklist</h2>
+      <ul>
+        <li>Apple Developer: $99/year</li>
+        <li>Google Play: $25 one-time</li>
+        <li>Domain: $15/year</li>
+        <li>SSL, push notifications, VIN API: $0</li>
+        <li><strong>Total: $139</strong></li>
+      </ul>
+      <p class="callout">Base build estimate = $39,633</p>
+    </section>
+
+    <section class="doc-section">
+      <h2>Annual operating cost</h2>
+      <p>Apple renewal ($99) + domain ($15) + hosting ($0–240) ≈ <strong>$114–$354/year</strong></p>
+    </section>
+
+    <section class="doc-section">
+      <h2>Contingency reserve</h2>
+      <table class="estimation-table">
+        <thead>
+          <tr><th>Risk</th><th>Chance</th><th>Impact</th><th>EMV</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Manual data entry</td><td>30%</td><td>$3,500</td><td>$1,050</td></tr>
+          <tr><td>Push notification reliability</td><td>25%</td><td>$2,800</td><td>$700</td></tr>
+          <tr><td>Unvalidated velocity estimate</td><td>50%</td><td>$4,200</td><td>$2,100</td></tr>
+          <tr><td colspan="3"><strong>Contingency reserve</strong></td><td><strong>$3,850</strong></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="doc-section">
+      <h2>Full budget request</h2>
+      <table class="estimation-table">
+        <thead>
+          <tr><th>Line</th><th>Amount</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Base build estimate</td><td>$39,633</td></tr>
+          <tr><td>Contingency reserve</td><td>$3,850</td></tr>
+          <tr><td>Cost baseline</td><td>$43,483</td></tr>
+          <tr><td>Management reserve (5%)</td><td>$2,174</td></tr>
+          <tr><td><strong>Total budget request</strong></td><td><strong>$45,657</strong></td></tr>
+          <tr><td>Operating cost (separate line)</td><td>$114–$354/year</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    Universal Automotive Management App — built for a software project management class.
+  </div>
+</footer>
+
+</body>
+</html>
