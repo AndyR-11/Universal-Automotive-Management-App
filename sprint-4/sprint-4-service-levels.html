@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Service Levels — Sprint 4 — Universal Automotive Management App</title>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="13" cy="13" r="11" stroke="#1e2226" stroke-width="1.6"/>
+        <path d="M13 6.5V13L17.3 15.3" stroke="#c97a2e" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+      Universal Automotive Management App
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about.html">About us</a></li>
+      <li><a href="../sprint-1/sprint-1.html">Sprint 1</a></li>
+      <li><a href="../sprint-2/sprint-2.html">Sprint 2</a></li>
+      <li><a href="../sprint-3/sprint-3.html">Sprint 3</a></li>
+      <li><a href="sprint-4.html" aria-current="page">Sprint 4</a></li>
+      <li><a href="../sprint-5/sprint-5.html">Sprint 5</a></li>
+      <li><a href="../sprint-6/sprint-6.html">Sprint 6</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="wrap">
+    <p class="breadcrumb"><a href="sprint-4.html">Sprint 4</a> / Service Levels</p>
+    <div class="doc-header">
+      <h1>Service Levels</h1>
+      <a class="btn btn-primary" href="../downloads/ServiceLevelsSprint4.pdf">Download PDF</a>
+    </div>
+  </div>
+</header>
+
+<section class="doc-grid-section">
+  <div class="wrap">
+
+    <section class="doc-section">
+      <h2>Targets</h2>
+<table class="estimation-table">
+  <thead>
+    <tr><th>Field</th><th>SLI 1: Reminder delivery (correctness and latency)</th><th>SLI 2: Site availability (availability)</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Definition</td><td>Share of maintenance reminders that are delivered correctly and within 5 minutes of their scheduled time</td><td>Share of minutes in which the site answers a check successfully</td></tr>
+    <tr><td>Measurement</td><td>Reminder delivery log, reviewed every Friday by the System Administrator</td><td>Free uptime monitor, reviewed every Friday by the System Administrator</td></tr>
+    <tr><td>SLO</td><td>99.9% of reminders correct and within 5 minutes in each sprint</td><td>99% uptime in each sprint. About 200 minutes of allowed downtime</td></tr>
+    <tr><td>Rule check</td><td>Not copied from a big company, one simple share, no absolutes</td><td>One simple share, 99% not 100%, one of only two SLOs</td></tr>
+    <tr><td>Who would notice</td><td>A user who misses a service because a reminder was late, wrong or missing</td><td>A user who cannot open the app or save an entry</td></tr>
+  </tbody>
+</table>
+<h3>SLI, SLO, and SLA</h3>
+<table class="estimation-table">
+  <thead>
+    <tr><th></th><th>Reminder delivery</th><th>Site availability</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>SLI</td><td>Share of reminders delivered correctly and within 5 minutes of their scheduled time</td><td>Share of minutes the site answers a check successfully</td></tr>
+    <tr><td>SLO</td><td>99.9% each sprint</td><td>99% each sprint</td></tr>
+    <tr><td>SLA</td><td>If fewer than 95% of reminders are on time in a month, affected users get a free trial of a paid feature</td><td>If monthly uptime falls below 97%, users get a free trial of a paid feature</td></tr>
+  </tbody>
+</table>
+    </section>
+    <section class="doc-section">
+      <h2>Error budget</h2>
+<table class="estimation-table">
+  <thead>
+    <tr><th>Field</th><th>Objective 1: Reminder delivery</th><th>Objective 2: Site availability</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Objective</td><td>99.9% of reminders correct and within 5 minutes, each sprint</td><td>99% uptime, each sprint</td></tr>
+    <tr><td>Budget</td><td>0.1% of reminders. At about 5,000 reminders per sprint that is 5 misses per sprint.</td><td>1% of 20,160 minutes in a 2 week sprint, which is about 200 minutes of downtime per sprint.</td></tr>
+    <tr><td>Policy action</td><td>If more than 5 reminders miss in a sprint, new feature work pauses. The fixers review the reminder log, find the cause, and add a test or check for it before new work starts.</td><td>If downtime passes 200 minutes, releases pause. The fixers find the cause and add a health check or rollback before the next release.</td></tr>
+    <tr><td>Owner</td><td>Incident commander</td><td>Incident commander</td></tr>
+    <tr><td>Who we tell, and when</td><td>The Project Sponsor in the next weekly update. The users by the end of the week.</td><td>The Project Sponsor in the weekly update or sooner if the next release is within 2 days. The users by the end of the week.</td></tr>
+  </tbody>
+</table>
+    </section>
+    <section class="doc-section">
+      <h2>Escalation paths</h2>
+<table class="estimation-table">
+  <thead>
+    <tr><th>Level</th><th>Example on our project</th><th>Start fixing</th><th>Tell the stakeholders</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Severity 1</td><td>The site is down, no reminders are sending, or the portal is down within 2 days of a release</td><td>Within 2 hours</td><td>Within 4 hours</td></tr>
+    <tr><td>Severity 2</td><td>Reminders are late or wrong for some users, a required page or a link on it is broken, or an error budget is spent</td><td>Within 24 hours</td><td>In the weekly update</td></tr>
+    <tr><td>Severity 3</td><td>Content is stale or a small display problem, with budget still left</td><td>By the next weekly check</td><td>Only if it repeats</td></tr>
+  </tbody>
+</table>
+<h3>Roles this sprint</h3>
+<table class="estimation-table">
+  <thead>
+    <tr><th>Role</th><th>This sprint</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Incident commander</td><td>Andres Romero</td></tr>
+    <tr><td>Fixers</td><td>Randal Guzman, Carlos Adrian Yanez Duron</td></tr>
+    <tr><td>Communicator</td><td>Esteban Navar</td></tr>
+  </tbody>
+</table>
+    </section>
+    <section class="doc-section">
+      <h2>Incident review</h2>
+<table class="estimation-table">
+  <thead>
+    <tr><th>Section</th><th>Review</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1. Summary</td><td>The estimation worksheet and one-page budget were initially built based on the capacity of a student team working on the project. The project assumes full-time work, so we corrected it to 80 hours per person per sprint and every number that depends on it was recalculated.</td></tr>
+    <tr><td>2. Impact</td><td>Velocity, sprints needed, effort hours, FTE-months, labor cost and contingency had to be recalculated in two documents. The budget request is now $45,657. We spent around an hour redoing the work.</td></tr>
+    <tr><td>3. Timeline</td><td><ul><li>9/29: worksheet completed at 40 hours per person per sprint.</li><li>10/1: mistake mentioned and identified in class.</li><li>10/2: team confirmed the full-time basis of 80 hours.</li><li>10/4: both documents correctly updated.</li></ul></td></tr>
+    <tr><td>4. Contributing causes</td><td>The capacity assumption was never clarified with the professor before estimating. We did not notice the mistake until it was mentioned in class, so the mismatch was not caught until late.</td></tr>
+    <tr><td>5. What went well</td><td>The mismatch was found before the final submission. The recalculation reused one set of formulas. We recorded this change in the change log.</td></tr>
+  </tbody>
+</table>
+    </section>
+    <section class="doc-section">
+      <h2>Action items</h2>
+<table class="estimation-table">
+  <thead>
+    <tr><th>Action</th><th>Owner</th><th>Date</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Clarify any unknowns with the professor before beginning work on the sprint deliverables.</td><td>Project Manager</td><td>Starting Sprint 5, before beginning each sprint</td></tr>
+    <tr><td>Before each submission, the team checks that numbers and assumptions match across all documents.</td><td>Project Manager</td><td>Starting Sprint 5, before each submission</td></tr>
+  </tbody>
+</table>
+    </section>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    Universal Automotive Management App — built for a software project management class.
+  </div>
+</footer>
+
+</body>
+</html>
