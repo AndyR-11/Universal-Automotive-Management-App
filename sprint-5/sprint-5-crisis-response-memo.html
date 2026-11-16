@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crisis Response Memo — Sprint 5 — Universal Automotive Management App</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+  .estimation-table td ul { margin: 0; padding-left: 1.1rem; }
+  .estimation-table td li { font-weight: 400; font-size: 0.92rem; }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="13" cy="13" r="11" stroke="#1e2226" stroke-width="1.6"/>
+        <path d="M13 6.5V13L17.3 15.3" stroke="#c97a2e" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+      Universal Automotive Management App
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about.html">About us</a></li>
+      <li><a href="../sprint-1/sprint-1.html">Sprint 1</a></li>
+      <li><a href="../sprint-2/sprint-2.html">Sprint 2</a></li>
+      <li><a href="../sprint-3/sprint-3.html">Sprint 3</a></li>
+      <li><a href="../sprint-4/sprint-4.html">Sprint 4</a></li>
+      <li><a href="sprint-5.html" aria-current="page">Sprint 5</a></li>
+      <li><a href="../sprint-6/sprint-6.html">Sprint 6</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="wrap">
+    <p class="breadcrumb"><a href="sprint-5.html">Sprint 5</a> / Crisis Response Memo</p>
+    <div class="doc-header">
+      <h1>Crisis Response Memo</h1>
+      <a class="btn btn-primary" href="../downloads/CrisisResponseMemo.pdf">Download PDF</a>
+    </div>
+  </div>
+</header>
+
+<section class="doc-grid-section">
+  <div class="wrap">
+
+    <section class="doc-section">
+      <h2>Memo details</h2>
+<table class="estimation-table">
+  <tbody>
+    <tr><td>Team</td><td>Team 6 – The Gentlemen</td></tr>
+    <tr><td>Project</td><td>Universal Automotive Management App</td></tr>
+    <tr><td>TO</td><td>Maria Whitman, Chief Executive Officer</td></tr>
+    <tr><td>VIA</td><td>Juan Jarvis, Chief of Staff</td></tr>
+    <tr><td>FROM</td><td>Team 6 – The Gentlemen</td></tr>
+    <tr><td>DATE</td><td>November 12, 2026</td></tr>
+    <tr><td>RE</td><td>Crisis response: incorrect maintenance reminders, uneven impact, and lead developer resignation</td></tr>
+  </tbody>
+</table>
+    </section>
+    <section class="doc-section">
+      <h2>Recommendation</h2>
+<table class="estimation-table">
+  <thead>
+    <tr><th>Recommendation</th><th>Cost</th><th>What we need from you</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>We believe we should cut the scope of the project.</td><td>About 30 team hours (9% of a sprint), remaining $642 contingency, no new funds requested</td><td>Approval to remove fuel-logging from the scope.</td></tr>
+  </tbody>
+</table>
+    </section>
+    <section class="doc-section">
+      <h2>On this page</h2>
+      <ul>
+        <li><a href="#s1">1. Situation and triage</a></li>
+        <li><a href="#s2">2. Decision log</a></li>
+        <li><a href="#s3">3. Governance response</a></li>
+        <li><a href="#s4">4. Delivery and reliability impact</a></li>
+        <li><a href="#s5">5. Updated risk register entries</a></li>
+        <li><a href="#s6">6. Personnel transition plan</a></li>
+        <li><a href="#s7">7. The CEO briefing</a></li>
+        <li><a href="#appA">Appendix A: Response log</a></li>
+        <li><a href="#appB">Appendix B: AI use disclosure</a></li>
+      </ul>
+    </section>
+    <section class="doc-section" id="s1">
+      <h2>1. Situation and triage</h2>
+<p>Last night an external provider that our reminder delivery component depends on released an update. Since then the component has returned incorrect results to every pilot user. Our engineers confirmed the cause is the provider’s update, not our code. The provider has published a fix, but we must retest the component against our charter’s success criteria before it returns to users. We selected reminder delivery as the affected component because it is our most data-dependent component (vehicle data and mileage, plus the third-party push notification and VIN services in our budget), its job is a charter success criterion, and it is the only component with published SLOs. We did not select the AI assistant because no SLO measures it.</p>
+<h3>Immediate consequences for the project</h3>
+<ul>
+  <li>Reliability: Our published SLO is 99.9% of reminders correct and within 5 minutes each sprint, with an error budget of 5 misses per sprint. With every pilot reminder wrong since last night, that budget is spent.</li>
+  <li>Money: Our contingency reserve was $3,850. The earlier scope change (we assume is our added fuel-logging feature) used half (about $1,925) and this repair plus the provider’s emergency fees use another third (about $1,283), leaving about $642. Provider credits arrive 30 days after the incident closes.</li>
+  <li>Stakeholders: Our highest-interest stakeholder, vehicle owners in the pilot, spent a day acting on wrong output and nobody on our team told them.</li>
+  <li>People: Waldo, who wrote most of the reminder component and documented little, leaves in 10 business days. A hiring freeze means we can’t replace him and he is also the person who would normally apply the fix and retest.</li>
+  <li>Unverified: A public developer-forum post claims the update exposed customer data. The provider says it has no evidence and is still investigating. We do not know whether data was exposed.</li>
+</ul>
+<h3>Triage ranking</h3>
+<table class="estimation-table">
+  <thead>
+    <tr><th>Rank</th><th>Emergency</th><th>Why it sits here (specific to our project)</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>Emergency 1: Incorrect reminders</td><td>Harm is ongoing and is the core promise in our charter. A wrong reminder is worse than none because users act on it. It must be stopped first, and it needs Waldo’s limited time, so the decision about his time follows from it.</td></tr>
+    <tr><td>2</td><td>Emergency 3: Waldo’s resignation</td><td>We only have him for 10 more business days, and the knowledge of how the reminder component works is not documented. Each day lost cannot be recovered, so it ranks above the governance work that does not need him.</td></tr>
+    <tr><td>3</td><td>Emergency 2: Uneven errors and no AI governance plan</td><td>Serious, but the analysis can run in parallel (project manager and QA, using the reminder log) and does not need Waldo. It must finish before service is restored so that the retest covers the affected group.</td></tr>
+  </tbody>
+</table>
+<h3>Did our risk register anticipate each emergency?</h3>
+<p>Our only risk register is the Sprint 3 candidate register (R-01 status quo, R-02 manufacturer apps close the gap, R-03 price sensitivity). It is a draft, and we used it as our working reference. It was built from interview evidence, so it holds only market risks and none of the three emergencies.</p>
+<table class="estimation-table">
+  <thead>
+    <tr><th>Emergency</th><th>One sentence</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1. Incorrect results</td><td>Missed: none of R-01 to R-03 covers an external provider failing; our budget lists “Push notification reliability” (25%, $2,800) but that only covers reminders failing to send, not a provider update returning wrong results.</td></tr>
+    <tr><td>2. Uneven impact</td><td>Missed: no entry covers uneven errors between user groups, because our register only covered market risks and we never asked who could be harmed more by errors.</td></tr>
+    <tr><td>3. Lead developer leaves</td><td>Missed: no entry covers losing a team member, because we planned staffing by capacity (80 hours per person per sprint) and never asked what happens if someone leaves.</td></tr>
+  </tbody>
+</table>
+    </section>
+    <section class="doc-section" id="s2">
+      <h2>2. Decision log</h2>
+<table class="estimation-table">
+  <thead>
+    <tr><th>Time</th><th>Em.</th><th>Decision</th><th>Options rejected</th><th>Reasoning</th><th>Owner</th><th>Reversible?</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Morning</td><td>1</td><td>Pause reminders to pilot users until the retest passes the charter’s reminder criterion.</td><td>Leave reminders running while we test.</td><td>Users act on wrong reminders.</td><td>Andres Romero (PM)</td><td>Yes, once retest passes</td></tr>
+    <tr><td>Morning</td><td>1</td><td>Send pilot users a notice: reminders wrong since last night, fix in progress.</td><td>Wait for the provider’s root-cause report</td><td>Trust depends on hearing it from us</td><td>Esteban Navar (communicator)</td><td>No, a sent message cannot be unsent</td></tr>
+    <tr><td>Early-afternoon</td><td>1 and 3</td><td>Two engineers other than Waldo apply the provider’s fix in staging. QA retests against the charter criteria.</td><td>Waldo applies the fix</td><td>Independent retest lowers the chance of missing errors. Waldo’s days are worth more for undocumented knowledge.</td><td>Andres Romero; Carlos Adrian Yanez Duron (QA)</td><td>Yes, until retest begins</td></tr>
+    <tr><td>After Day 2</td><td>3</td><td>Waldo pairs with the receiving engineers during the fix (days 1–2), then documents and hands off (days 3–10).</td><td>Use his days for feature work.</td><td>Learning the component while fixing it transfers knowledge twice as fast.</td><td>Andres Romero</td><td>Yes, reviewed daily</td></tr>
+    <tr><td>Afternoon</td><td>2</td><td>Name Andres Romero incident owner for the suspected bias incident. Start analysis of the reminder log by vehicle count, vehicle age and make.</td><td>Wait for the provider to explain the pattern.</td><td>Someone must be accountable before response can be managed.</td><td>Andres Romero</td><td>Yes</td></tr>
+    <tr><td>Afternoon</td><td>1</td><td>Spend remaining contingency (about $642) only on the retest. Any further spend goes to the sponsor for approval.</td><td>Use the 5% management reserve ($2,174) without approval.</td><td>The reserve is the sponsor’s, not ours to spend.</td><td>Andres Romero</td><td>No, spent money is not recovered until credits arrive</td></tr>
+    <tr><td>Evening</td><td>All</td><td>Cut scope by removing the fuel-logging feature</td><td>Pause the project while we work on the fix</td><td>Main features are protected and we need our team to learn Waldo’s work.</td><td>Whole team</td><td>No</td></tr>
+  </tbody>
+</table>
+    </section>
+    <section class="doc-section" id="s3">
+      <h2>3. Governance response</h2>
+<h3>3.1 Incident owner</h3>
+<ul>
+  <li>Who: Andres Romero, project manager and incident commander.</li>
+  <li>Authority: Under the charter he coordinates the response, makes decisions that do not materially change scope, and escalates scope, budget and schedule changes to you as sponsor.</li>
+  <li>Why him: He already holds the incident commander role on our escalation path and owns the schedule and budget, so decisions about people and money do not need a second hand-off.</li>
+</ul>
+<h3>3.2 Risk classification</h3>
+<p>We classify the reminder component using the NIST AI Risk Management Framework. We chose it over the EU AI Act tiers because the Act’s tiers turn on use-case categories (our app would likely be minimal risk) and would hide the real concern: a missed or wrong reminder can lead a user to skip a brake or tire service, a safety and cost consequence for a user, and uneven errors can harm one group more than another.</p>
+<ul>
+  <li>Map: Document what the component does, what data it uses from the provider, who is affected, and who is harmed first.</li>
+  <li>Measure: Track correctness by group, not only overall.</li>
+  <li>Manage: Retest after every provider change. Keep a rollback and a pause switch for reminders.</li>
+  <li>Govern: Name an incident owner, a bias-monitoring owner and a review cadence (3.1 and 3.3).</li>
+</ul>
+<p>Added time: about 30 hours (risk and transparency documents (14 hrs), group-level metric and alert (12 hrs), review (4 hrs), roughly 9% of one sprint’s 320 team hours. It fits inside the next sprint if scope is held or reduced, and it does not move the end date on its own.</p>
+<h3>3.3 Bias monitoring plan</h3>
+<ul>
+  <li>Metric: the share of reminders delivered correctly and within 5 minutes, calculated separately for users with older or less common vehicles and for everyone else, reported as the group’s miss rate divided by the overall miss rate.</li>
+  <li>Threshold: escalate to the incident owner within 24 hours if any group’s miss rate is more than twice the overall rate, or if any group falls below 99% correct in a week.</li>
+  <li>Owner: Carlos Adrian Yanez Duron (QA), with Andres Romero as backup.</li>
+  <li>Frequency: daily for the first two weeks after reminders are restored, then at the weekly Friday review.</li>
+</ul>
+<p>This is an assumption-based first version; the group is an assumption because our records cannot yet tell us who was hit hardest.</p>
+<h3>3.4 Transparency response to the affected pilot group</h3>
+<table class="estimation-table">
+  <thead>
+    <tr><th>Known now</th><th>Cannot be determined from existing records</th><th>Documentation we would need</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><ul><li>The provider released an update last night.</li><li>Reminders were incorrect for pilot users since then.</li><li>Our engineers traced the cause to the update.</li><li>The provider has published a fix and we are retesting before restoring service.</li><li>Our dashboard captured the full period of incorrect output.</li><li>The pilot group’s review shows the errors were not evenly spread.</li></ul></td><td><ul><li>Exactly what the provider changed.</li><li>How our component uses the provider’s output (Waldo wrote it)</li><li>Why one group was affected more.</li><li>Whether any customer data was exposed (unverified claim).</li></ul></td><td><ul><li>Provider change notes and root-cause report.</li><li>A written description of how reminder results are produced.</li><li>Inputs and outputs logged by user group.</li><li>Records of the model or data source versions in use.</li></ul></td></tr>
+  </tbody>
+</table>
+    </section>
+    <section class="doc-section" id="s4">
+      <h2>4. Delivery and reliability impact</h2>
+<ul>
+  <li>SLO breach: Reminder delivery (99.9% correct and within 5 minutes per sprint) was violated. The scenario says every pilot user received incorrect results, so the correct share fell from the 99.9% objective to approximately 0% for the period since last night’s update.</li>
+  <li>Error budget: Our budget is 0.1% of reminders, 5 misses in a sprint at about 5,000 reminders. Wrong results for every user spent it within the first few reminders. Our policy requires new feature work to pause, the fixers review the reminder log, find the cause and add a test or check before feature work resumes. The sponsor must be told in the next weekly update and users by the end of the week.</li>
+  <li>Dashboard metrics that changed: Share of reminders correct and within 5 minutes went down. Error budget remaining went to zero. We do not know whether latency changed, because our Sprint 4 service-level page measures correctness and lateness together in one share. We have no dashboard page with values so this is an assumption</li>
+  <li>Early detection: The reminder log is reviewed weekly on Fridays, so an overnight failure could not be caught. We would have needed an automated daily correctness check using test vehicles with known due dates, an alert when the correct share drops below the SLO, and a subscription to the provider’s change notices.</li>
+</ul>
+    </section>
+    <section class="doc-section" id="s5">
+      <h2>5. Updated risk register entries</h2>
+<table class="estimation-table">
+  <thead>
+    <tr><th>Field</th><th>R-N1 Provider update breaks reminders</th><th>R-N2 One user group hit harder</th><th>R-N3 Key developer leaves</th><th>R-N4 Data exposure claim</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Risk</td><td>An external provider (push, VIN API, hosting) changes behavior and reminders return wrong results.</td><td>One group (for example, older or less common vehicles, or users with several vehicles) gets more errors than others, unnoticed.</td><td>A developer who holds undocumented knowledge of the reminder component leaves.</td><td>A provider’s data exposure cannot be confirmed or ruled out while user data is shared with it.</td></tr>
+    <tr><td>Probability / impact</td><td>30% / about $3,000 plus lost user trust</td><td>25% / high (user harm, trust)</td><td>20% / about 80 hours of rework</td><td>15% / high (legal, trust)</td></tr>
+    <tr><td>Proposed owner</td><td>Esteban Navar (third-party services)</td><td>Carlos Adrian Yanez Duron (QA)</td><td>Andres Romero (PM)</td><td>Randal Guzman (backend/API)</td></tr>
+    <tr><td>Mitigation</td><td>Name providers as critical dependencies; retest after each provider change; keep a pause switch for reminders.</td><td>Track correctness by group (Section 3.3); retest by group.</td><td>Runbook for each critical component; a second engineer on each.</td><td>Minimize data sent to providers; require provider written statements.</td></tr>
+    <tr><td>Early warning signal (trigger)</td><td>Provider change notice or incident; correct share below 99.9% in the daily check.</td><td>Group miss rate above 2× overall; complaints from one segment.</td><td>A component with one author and no runbook; a developer interviewing.</td><td>Public reports, provider advisories, unusual access logs.</td></tr>
+    <tr><td>Trigger response</td><td>Pause reminders, notify users within 4 hours, retest in staging.</td><td>Escalate to incident owner within 24 hours; hold feature work; group-level retest.</td><td>Start documentation and pairing at once.</td><td>Check logs; get the provider’s statement; notify users once confirmed.</td></tr>
+    <tr><td>Last response validation</td><td>Never</td><td>Never</td><td>Never</td><td>Never</td></tr>
+    <tr><td>Evidence</td><td>This incident; budget lines for push, VIN API, hosting.</td><td>This incident; pilot group’s review.</td><td>This incident; Waldo’s resignation.</td><td>Forum post (unverified); provider statement.</td></tr>
+  </tbody>
+</table>
+    </section>
+    <section class="doc-section" id="s6">
+      <h2>6. Personnel transition plan</h2>
+<p>Assumption: Waldo owns the reminder component, which sits in our Backend/API role. Our portal has no team topology diagram and no skills gap analysis. A topology diagram would have shown which team owns the component and how it interacts with others, and a skills gap analysis would have shown whether anyone besides Waldo can maintain it, so we use our staffing table instead.</p>
+<h3>Knowledge transfer</h3>
+<p>What we must capture before he leaves (assumed, because the component is mostly undocumented). How reminder due dates are calculated from vehicle data and mileage, how the provider’s output is read and what happens when it changes, configuration, deployment and rollback step, provider accounts and contacts, known quirks and test data.</p>
+<h3>Ten-business-day handoff</h3>
+<table class="estimation-table">
+  <thead>
+    <tr><th>Days</th><th>Waldo</th><th>Receives</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1–2</td><td>Pairs with two engineers while they apply the provider’s fix in staging.</td><td>Two engineers (not Waldo), QA</td></tr>
+    <tr><td>3–6</td><td>Writes a runbook and records walkthroughs of the reminder logic, provider integration and rollback.</td><td>Backend/API team, QA</td></tr>
+    <tr><td>7–8</td><td>Documents the provider integration and test data; reviews the retest results.</td><td>QA, project manager</td></tr>
+    <tr><td>9–10</td><td>Shadows the receiving engineers running a deployment and a rollback; fixes gaps in the runbook.</td><td>Backend/API team</td></tr>
+  </tbody>
+</table>
+<h3>Reassignment, cognitive load and skills gap</h3>
+<p>His work moves to the Backend/API role (Randal Guzman), with the PM / Backend role (Andres Romero) as second engineer and QA (Carlos Adrian Yanez Duron) reviewing. This raises the Backend/API role’s cognitive load, because it already carries the API work and now takes on a component it did not write. We cannot name the skills gap from a document that does not exist. Our assumption is that it is reminder scheduling and provider integration, which only Waldo knows.</p>
+<h3>Scope adjustment</h3>
+<p>If the receiving team cannot absorb the work, a candidate to remove is fuel logging (added in Sprint 3) or the AI assistant, because these features aren’t part of the system’s key workflow. Under the charter, a change this large needs team agreement and your approval.</p>
+    </section>
+    <section class="doc-section" id="s7">
+      <h2>7. The CEO briefing</h2>
+<h3>Part A: Five key messages, in the order delivered</h3>
+<ol>
+  <li>An external provider update caused incorrect results for all pilot users, and the highest-interest stakeholder discovered the issue before your team notified them.</li>
+  <li>The affected reminders should remain paused until the provider’s fix passes testing against the project charter.</li>
+  <li>One user group received disproportionately incorrect results. Users with older or less common vehicles we’re affected more as maintenance information varies by make, model and year our vehicle databases are limited.</li>
+  <li>Only about $642 of the original contingency reserve remains, and Waldo is leaving in ten business days.</li>
+  <li>We believe the best way to move forward in addressing this crisis is to reduce the scope of the project. We need your approval.</li>
+</ol>
+<h3>Part B: What we will not say, and why</h3>
+<ul>
+  <li>We will not claim customer data was exposed as the allegation is unverified, and the provider’s investigation is ongoing.</li>
+  <li>We will not say the provider’s fix completely solved the problem as we have not finished testing it against the charter.</li>
+</ul>
+<h3>Part C: Executive recommendation</h3>
+<ul>
+  <li>Our recommendation is to cut the scope of the project. We will cut the fuel-logging feature added in sprint 3</li>
+  <li>Why: main features will still be protected, our contingency reserve is about to run out, and we need to reduce the workload of our team so they can learn Waldo’s component.</li>
+  <li>Cost: We won’t ask for more money, but we will use the remainder of the contingency reserve for retesting. We also need an additional 30 hours for risk classification. We estimate we will maintain our original deadline.</li>
+  <li>We need you to approve the scope change so we can continue with assessing the crisis.</li>
+  <li>If our team doesn’t need as much time to learn Waldo’s component, we might change to just continuing the project.</li>
+</ul>
+    </section>
+    <section class="doc-section" id="appA">
+      <h2>Appendix A: Response log</h2>
+<table class="estimation-table">
+  <thead>
+    <tr><th>When we worked</th><th>Who took part</th><th>How we met or communicated</th><th>Who did what</th><th>Asynchronous contributions</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Nov 12 3:00 - 4:45pm</td><td>Andres, Randal, Esteban, Carlos</td><td>Teams call</td><td><ul><li>Andres: Section 1&amp;2</li><li>Randal: Section 3&amp;4</li><li>Esteban: Section 5&amp;6</li><li>Carlos: Section 6&amp;7</li></ul></td><td>N/A</td></tr>
+  </tbody>
+</table>
+    </section>
+    <section class="doc-section" id="appB">
+      <h2>Appendix B: AI use disclosure</h2>
+<p>For this assignment, we really did not use AI that much. We did use it to help out with the getting the numbers of how long certain things could take to fix along with helping us calculate how much money we would loose in a real life situation like this. We also used it a bit for the tables just to double check that they were correct. What we really did rely on with AI was to help us get our thought process going and checking if we were going in the right directions. The AI that we used was ChatGPT and it didn’t really correct us it was more of just a check on our thought process which was pretty much spot on. The CEO briefing we did not use a single bit of AI for that section either.</p>
+    </section>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    Universal Automotive Management App — built for a software project management class.
+  </div>
+</footer>
+
+</body>
+</html>
